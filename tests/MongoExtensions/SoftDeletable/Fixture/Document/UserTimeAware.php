@@ -1,6 +1,6 @@
 <?php
 
-namespace SoftDeletable\Fixture\Document;
+namespace MongoExtensions\Tests\SoftDeletable\Fixture\Document;
 
 use MongoExtensions\Mapping\Annotation as MongoExtensions;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
@@ -17,13 +17,13 @@ class UserTimeAware
     /** @ODM\Field(type="string") */
     private $username;
 
-    /** @ODM\Date */
+    /** @ODM\Field(type="date") */
     protected $deletedAt;
 
     /**
      * Sets deletedAt.
      *
-     * @param Datetime $deletedAt
+     * @param \Datetime $deletedAt
      *
      * @return $this
      */
@@ -37,7 +37,7 @@ class UserTimeAware
     /**
      * Returns deletedAt.
      *
-     * @return DateTime
+     * @return \DateTime
      */
     public function getDeletedAt()
     {

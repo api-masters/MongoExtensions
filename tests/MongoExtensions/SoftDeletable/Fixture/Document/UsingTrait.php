@@ -1,6 +1,6 @@
 <?php
 
-namespace SoftDeletable\Fixture\Document;
+namespace MongoExtensions\Tests\SoftDeletable\Fixture\Document;
 
 use MongoExtensions\SoftDeletable\Traits\SoftDeletableDocument;
 

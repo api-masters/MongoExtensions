@@ -1,10 +1,11 @@
 <?php
 
-namespace MongoExtensions\SoftDeletable;
+namespace MongoExtensions\Tests\MongoExtensions\SoftDeletable;
 
-use Tool\BaseTestCaseMongoODM;
+use MongoExtensions\SoftDeletable\SoftDeletableListener;
 use Doctrine\Common\EventManager;
-use SoftDeletable\Fixture\Document\User;
+use MongoExtensions\Tests\SoftDeletable\Fixture\Document\User;
+use MongoExtensions\Tests\Tool\BaseTestCaseMongoODM;
 
 /**
  * These are tests for SoftDeletable behavior
@@ -17,8 +18,8 @@ use SoftDeletable\Fixture\Document\User;
  */
 class SoftDeletableDocumentTest extends BaseTestCaseMongoODM
 {
-    const USER_CLASS = 'SoftDeletable\Fixture\Document\User';
-    const USER__TIME_AWARE_CLASS = 'SoftDeletable\Fixture\Document\UserTimeAware';
+    const USER_CLASS = 'MongoExtensions\Tests\SoftDeletable\Fixture\Document\User';
+    const USER__TIME_AWARE_CLASS = 'MongoExtensions\Tests\SoftDeletable\Fixture\Document\UserTimeAware';
     const SOFT_DELETEABLE_FILTER_NAME = 'soft-deleteable';
 
     private $softDeletableListener;

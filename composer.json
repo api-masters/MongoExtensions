@@ -11,7 +11,14 @@
     "phpunit/phpunit": "^8.0"
   },
   "autoload": {
-    "psr-4": { "MongoExtensions\\": "src/MongoExtensions" }
+    "psr-4": {
+      "MongoExtensions\\": "src/MongoExtensions"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MongoExtensions\\Tests\\": "tests/MongoExtensions"
+    }
   },
   "license": "MIT",
   "authors": [

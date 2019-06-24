@@ -1,6 +1,6 @@
 <?php
 
-namespace SoftDeletable\Fixture\Document;
+namespace MongoExtensions\Tests\SoftDeletable\Fixture\Document;
 
 use MongoExtensions\Mapping\Annotation as MongoExtensions;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;

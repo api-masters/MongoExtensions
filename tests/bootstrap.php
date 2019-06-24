@@ -23,7 +23,7 @@ define('VENDOR_PATH', realpath(__DIR__.'/../vendor'));
 /** @var $loader ClassLoader */
 $loader = require __DIR__.'/../vendor/autoload.php';
 
-$loader->add('MongoExtensions\\Mapping\\Mock', __DIR__);
+/*$loader->add('MongoExtensions\\Mapping\\Mock', __DIR__);
 $loader->add('Tool', __DIR__.'/MongoExtensions');
 // fixture namespaces
 $loader->add('Translator\\Fixture', __DIR__.'/MongoExtensions');
@@ -42,7 +42,7 @@ $loader->add('Wrapper\\Fixture', __DIR__.'/MongoExtensions');
 $loader->add('ReferenceIntegrity\\Fixture', __DIR__.'/MongoExtensions');
 $loader->add('References\\Fixture', __DIR__.'/MongoExtensions');
 // stubs
-$loader->add('MongoExtensions\\Uploadable\\Stub', __DIR__);
+$loader->add('MongoExtensions\\Uploadable\\Stub', __DIR__);*/
 
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 MongoExtensions\DoctrineExtensions::registerAnnotations();

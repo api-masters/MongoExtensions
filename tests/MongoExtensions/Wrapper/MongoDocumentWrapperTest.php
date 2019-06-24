@@ -1,10 +1,10 @@
 <?php
 
-namespace Wrapper;
+namespace MongoExtensions\Tests\Wrapper;
 
-use Tool\BaseTestCaseMongoODM;
+use MongoExtensions\Tests\Tool\BaseTestCaseMongoODM;
 use Doctrine\Common\EventManager;
-use Wrapper\Fixture\Document\Article;
+use MongoExtensions\Tests\Wrapper\Fixture\Document\Article;
 use MongoExtensions\Tool\Wrapper\MongoDocumentWrapper;
 
 /**
@@ -16,7 +16,7 @@ use MongoExtensions\Tool\Wrapper\MongoDocumentWrapper;
  */
 class MongoDocumentWrapperTest extends BaseTestCaseMongoODM
 {
-    const ARTICLE = "Wrapper\\Fixture\\Document\\Article";
+    const ARTICLE = "MongoExtensions\\Tests\\Wrapper\\Fixture\\Document\\Article";
     private $articleId;
 
     protected function setUp() : void

@@ -1,8 +1,8 @@
 <?php
 
-namespace MongoExtensions\SoftDeletable;
+namespace MongoExtensions\Tests\SoftDeletable;
 
-use SoftDeletable\Fixture\Document\UsingTrait;
+use MongoExtensions\Tests\SoftDeletable\Fixture\Document\UsingTrait;
 
 /**
  * Test for SoftDeletable Entity Trait
@@ -25,6 +25,9 @@ class SoftDeletableDocumentTraitTest extends \PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * @throws \Exception
+     */
     public function testGetSetDeletedAt()
     {
         $time = new \DateTime();

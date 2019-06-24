@@ -1,20 +1,15 @@
 <?php
 
-namespace Tool;
+namespace MongoExtensions\Tests\Tool;
 
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\Common\EventManager;
-
-use Doctrine\ODM\MongoDB\Repository\DefaultRepositoryFactory;
 use MongoDB\Client;
 use MongoDB\Collection;
-use MongoExtensions\Translatable\TranslatableListener;
-use MongoExtensions\Sluggable\SluggableListener;
-use MongoExtensions\Timestampable\TimestampableListener;
 use MongoExtensions\SoftDeletable\SoftDeletableListener;
-use MongoExtensions\Loggable\LoggableListener;
+
 
 /**
  * Base test case contains common mock objects

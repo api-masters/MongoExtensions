@@ -10,6 +10,9 @@
          bootstrap="tests/bootstrap.php"
 >
     <testsuites>
+        <testsuite name="Loggable Extension">
+            <directory suffix="Test.php">tests/MongoExtensions/Loggable/</directory>
+        </testsuite>
         <testsuite name="SoftDeletable Extension">
             <directory suffix="Test.php">tests/MongoExtensions/SoftDeletable/</directory>
         </testsuite>

@@ -3,11 +3,11 @@
 namespace MongoExtensions\Tests\Loggable\Fixture\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-use Gedmo\Mapping\Annotation as Gedmo;
+use MongoExtensions\Mapping\Annotation as MongoExtensions;
 
 /**
  * @ODM\Document(collection="articles")
- * @Gedmo\Loggable
+ * @MongoExtensions\Loggable
  */
 class Article
 {
@@ -15,14 +15,14 @@ class Article
     private $id;
 
     /**
-     * @Gedmo\Versioned
+     * @MongoExtensions\Versioned
      * @ODM\Field(type="string")
      */
     private $title;
 
     /**
-     * @ODM\EmbedOne(targetDocument="Author")
-     * @Gedmo\Versioned
+     * @ODM\EmbedOne(targetDocument=Author::class)
+     * @MongoExtensions\Versioned
      */
     private $author;
 

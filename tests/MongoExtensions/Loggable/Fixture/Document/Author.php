@@ -3,22 +3,22 @@
 namespace MongoExtensions\Tests\Loggable\Fixture\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-use Gedmo\Mapping\Annotation as Gedmo;
+use MongoExtensions\Mapping\Annotation as MongoExtensions;
 
 /**
  * @ODM\EmbeddedDocument
- * @Gedmo\Loggable
+ * @MongoExtensions\Loggable
  */
 class Author
 {
     /**
-     * @Gedmo\Versioned
+     * @MongoExtensions\Versioned
      * @ODM\Field(type="string")
      */
     private $name;
 
     /**
-     * @Gedmo\Versioned
+     * @MongoExtensions\Versioned
      * @ODM\Field(type="string")
      */
     private $email;

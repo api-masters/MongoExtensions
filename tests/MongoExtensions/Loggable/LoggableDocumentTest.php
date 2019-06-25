@@ -2,11 +2,14 @@
 
 namespace MongoExtensions\Tests\Loggable;
 
+use MongoExtensions\Loggable\Document\LogEntry;
+use MongoExtensions\Loggable\LoggableListener;
 use MongoExtensions\Tests\Tool\BaseTestCaseMongoODM;
 use Doctrine\Common\EventManager;
 use MongoExtensions\Tests\Loggable\Fixture\Document\Article;
 use MongoExtensions\Tests\Loggable\Fixture\Document\RelatedArticle;
 use MongoExtensions\Tests\Loggable\Fixture\Document\Comment;
+use MongoExtensions\Tests\Loggable\Fixture\Document\Log\Comment as CommentLog;
 use MongoExtensions\Tests\Loggable\Fixture\Document\Author;
 use Composer\Autoload\ClassLoader;
 
@@ -21,12 +24,7 @@ use Composer\Autoload\ClassLoader;
  */
 class LoggableDocumentTest extends BaseTestCaseMongoODM
 {
-    const ARTICLE = 'Loggable\\Fixture\\Document\\Article';
-    const COMMENT = 'Loggable\\Fixture\\Document\\Comment';
-    const RELATED_ARTICLE = 'Loggable\\Fixture\\Document\\RelatedArticle';
-    const COMMENT_LOG = 'Loggable\\Fixture\\Document\\Log\\Comment';
-
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $evm = new EventManager();
@@ -39,8 +37,8 @@ class LoggableDocumentTest extends BaseTestCaseMongoODM
 
     public function testLogGeneration()
     {
-        $logRepo = $this->dm->getRepository('Gedmo\\Loggable\\Document\\LogEntry');
-        $articleRepo = $this->dm->getRepository(self::ARTICLE);
+        $logRepo = $this->dm->getRepository(LogEntry::class);
+        $articleRepo = $this->dm->getRepository(Article::class);
         $this->assertCount(0, $logRepo->findAll());
 
         $art0 = new Article();
@@ -55,7 +53,7 @@ class LoggableDocumentTest extends BaseTestCaseMongoODM
         $this->dm->persist($art0);
         $this->dm->flush();
 
-        $log = $logRepo->findOneByObjectId($art0->getId());
+        $log = $logRepo->findOneBy(['objectId' => $art0->getId()]);
 
         $this->assertNotNull($log);
         $this->assertEquals('create', $log->getAction());
@@ -70,7 +68,7 @@ class LoggableDocumentTest extends BaseTestCaseMongoODM
         $this->assertEquals($data['author'], array('name' => 'John Doe', 'email' => 'john@doe.com'));
 
         // test update
-        $article = $articleRepo->findOneByTitle('Title');
+        $article = $articleRepo->findOneBy(['title' => 'Title']);
         $article->setTitle('New');
         $this->dm->persist($article);
         $this->dm->flush();
@@ -80,7 +78,7 @@ class LoggableDocumentTest extends BaseTestCaseMongoODM
         $this->assertEquals('update', $log->getAction());
 
         // test delete
-        $article = $articleRepo->findOneByTitle('New');
+        $article = $articleRepo->findOneBy(['title' => 'New']);
         $this->dm->remove($article);
         $this->dm->flush();
         $this->dm->clear();
@@ -93,10 +91,10 @@ class LoggableDocumentTest extends BaseTestCaseMongoODM
     public function testVersionControl()
     {
         $this->populate();
-        $commentLogRepo = $this->dm->getRepository(self::COMMENT_LOG);
-        $commentRepo = $this->dm->getRepository(self::COMMENT);
+        $commentLogRepo = $this->dm->getRepository(CommentLog::class);
+        $commentRepo = $this->dm->getRepository(Comment::class);
 
-        $comment = $commentRepo->findOneByMessage('m-v5');
+        $comment = $commentRepo->findOneBy(['message' => 'm-v5']);
         $commentId = $comment->getId();
         $this->assertEquals('m-v5', $comment->getMessage());
         $this->assertEquals('s-v3', $comment->getSubject());

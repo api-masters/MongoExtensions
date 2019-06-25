@@ -3,11 +3,11 @@
 namespace MongoExtensions\Tests\Loggable\Fixture\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-use Gedmo\Mapping\Annotation as Gedmo;
+use MongoExtensions\Mapping\Annotation as MongoExtensions;
 
 /**
  * @ODM\Document
- * @Gedmo\Loggable(logEntryClass="Loggable\Fixture\Document\Log\Comment")
+ * @MongoExtensions\Loggable(logEntryClass="MongoExtensions\Tests\Loggable\Fixture\Document\Log\Comment")
  */
 class Comment
 {
@@ -17,26 +17,26 @@ class Comment
     private $id;
 
     /**
-     * @Gedmo\Versioned
+     * @MongoExtensions\Versioned
      * @ODM\Field(type="string")
      */
     private $subject;
 
     /**
-     * @Gedmo\Versioned
+     * @MongoExtensions\Versioned
      * @ODM\Field(type="string")
      */
     private $message;
 
     /**
-     * @Gedmo\Versioned
-     * @ODM\ReferenceOne(targetDocument="RelatedArticle", inversedBy="comments")
+     * @MongoExtensions\Versioned
+     * @ODM\ReferenceOne(targetDocument=RelatedArticle::class, inversedBy="comments")
      */
     private $article;
 
     /**
-     * @ODM\EmbedOne(targetDocument="Author")
-     * @Gedmo\Versioned
+     * @ODM\EmbedOne(targetDocument=Author::class)
+     * @MongoExtensions\Versioned
      */
     private $author;
 

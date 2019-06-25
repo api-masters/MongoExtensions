@@ -2,6 +2,7 @@
 
 namespace MongoExtensions\Loggable\Mapping\Event\Adapter;
 
+use MongoExtensions\Loggable\Document\LogEntry;
 use MongoExtensions\Mapping\Event\Adapter\ODM as BaseAdapterODM;
 use MongoExtensions\Loggable\Mapping\Event\LoggableAdapter;
 
@@ -19,7 +20,7 @@ final class ODM extends BaseAdapterODM implements LoggableAdapter
      */
     public function getDefaultLogEntryClass()
     {
-        return 'Gedmo\\Loggable\\Document\\LogEntry';
+        return LogEntry::class;
     }
 
     /**

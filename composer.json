@@ -1,5 +1,5 @@
 {
-  "name": "api-masters/MongoExtensions",
+  "name": "api-masters/mongo-extensions",
   "description": "Doctrine ODM v.2.0 compatible extensions.",
   "type": "library",
   "require": {

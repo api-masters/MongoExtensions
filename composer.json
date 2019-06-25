@@ -5,11 +5,11 @@
   "require": {
     "php": "^7.2",
     "ext-simplexml": "*",
+    "doctrine/mongodb-odm": "^2.0@beta",
     "doctrine-extensions/common": "^1.0.0",
     "symfony/yaml": "^4.3"
   },
   "require-dev": {
-    "doctrine/mongodb-odm": "^2.0@beta",
     "phpunit/phpunit": "^8.0"
   },
   "autoload": {

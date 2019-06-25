@@ -1,11 +1,11 @@
 {
-  "name": "mongo-extensions/tree",
-  "description": "Doctrine ODM 2.0 compatible extensions.",
+  "name": "api-masters/MongoExtensions",
+  "description": "Doctrine ODM v.2.0 compatible extensions.",
   "type": "library",
   "require": {
-    "doctrine-extensions/common": "^1.0.0",
     "php": "^7.2",
     "ext-simplexml": "*",
+    "doctrine-extensions/common": "^1.0.0",
     "symfony/yaml": "^4.3"
   },
   "require-dev": {

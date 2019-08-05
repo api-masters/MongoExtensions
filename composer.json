@@ -1,13 +1,13 @@
 {
   "name": "api-masters/mongo-extensions",
-  "description": "Doctrine ODM v.2.0 compatible extensions.",
+  "description": "doctrine/mongodb-odm v.2.0 compatible extensions.",
   "type": "library",
   "require": {
     "php": "^7.2",
     "ext-simplexml": "*",
     "doctrine/mongodb-odm": "^2.0@beta",
     "doctrine-extensions/common": "^1.0.0",
-    "symfony/yaml": "4.2.*"
+    "symfony/yaml": "4.3.*"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.0"

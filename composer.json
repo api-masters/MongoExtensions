@@ -5,7 +5,7 @@
   "require": {
     "php": "^7.2",
     "ext-simplexml": "*",
-    "doctrine/mongodb-odm": "^2.0@beta",
+    "doctrine/mongodb-odm": "^2.1.*",
     "doctrine-extensions/common": "^1.0.0",
     "symfony/yaml": "4.4.*"
   },
